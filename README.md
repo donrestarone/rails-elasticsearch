@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## To install elastic-search on ubuntu
 
-Things you may want to cover:
+grab the elastic public GPG key and put it into apt
+```bash
+curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+```
+add the elastic source
 
-* Ruby version
+```bash
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+```
 
-* System dependencies
 
-* Configuration
+```bash
+sudo apt update
+```
 
-* Database creation
+```bash
+sudo apt install elasticsearch
+```
 
-* Database initialization
+to start elastic search
+```bash
+sudo systemctl start elasticsearch
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup the rails app
+```bash
+rails db:create && rails db:migrate && rails db:seed && rails s
+```
