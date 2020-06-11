@@ -30,3 +30,12 @@ sudo systemctl start elasticsearch
 ```bash
 rails db:create && rails db:migrate && rails db:seed && rails s
 ```
+
+## What you can expect
+
+Check out the tests for queries.
+![Rspec tests](https://i.imgur.com/vpN8N8y.png)
+
+With postman we see the JSON structure that is returned by the API.
+![Postman tests](https://i.imgur.com/ZtDsrx9.png)
+
