@@ -1,3 +1,7 @@
-Elasticsearch::Model.client = Elasticsearch::Client.new({
-  log: true
-})
+
+
+if Rails.env != 'test'
+  Elasticsearch::Model.client = Elasticsearch::Client.new({
+    log: true
+  })
+end
